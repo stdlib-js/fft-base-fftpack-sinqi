@@ -45,38 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/fft-base-fftpack-sinqi
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-sinqi = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/fft-base-fftpack-sinqi@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var sinqi = require( 'path/to/vendor/umd/fft-base-fftpack-sinqi/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fft-base-fftpack-sinqi@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.sinqi;
-})();
-</script>
+var sinqi = require( '@stdlib/fft-base-fftpack-sinqi' );
 ```
 
 #### sinqi( N, workspace, strideW, offsetW )
@@ -99,7 +93,7 @@ var cosineTable = workspace.slice( 0, N );
 // returns <Float64Array>[ ~0.98, ~0.92, ~0.83, ~0.7, ~0.56, ~0.38, ~0.2, ~0.0 ]
 
 var twiddleFactors = workspace.slice( 2*N, 3*N );
-// returns <Float64Array>[ 0, ~0.707, ~0.707, 0, 0, 0, 0, 0 ]
+// returns <Float64Array>[ ~0.707, ~0.707, 0, 0, 0, 0, 0, 0 ]
 
 var factors = workspace.slice( 3*N, ( 3*N ) + 4 );
 // returns <Float64Array>[ 8, 2, 2, 4 ]
@@ -155,16 +149,11 @@ The function accepts the following arguments:
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-float64@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zero-to@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/fft-base-fftpack-sinqi@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var Float64Array = require( '@stdlib/array-float64' );
+var zeroTo = require( '@stdlib/array-zero-to' );
+var logEach = require( '@stdlib/console-log-each' );
+var sinqi = require( '@stdlib/fft-base-fftpack-sinqi' );
 
 var N = 8;
 var workspace = new Float64Array( ( 3*N ) + 34 );
@@ -186,11 +175,6 @@ var nf = workspace[ (3*N)+1 ];
 console.log( '  number of factors: %d', nf );
 idx = zeroTo( nf, 'generic' );
 logEach( '  factor[ %d ]: %d', idx, workspace.slice( (3*N)+2, (3*N)+2+nf ) );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
