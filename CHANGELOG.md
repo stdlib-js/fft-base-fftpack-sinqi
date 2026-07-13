@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-06-22)
+## Unreleased (2026-07-13)
 
 <section class="features">
 
@@ -16,12 +16,23 @@
 
 <!-- /.features -->
 
+<section class="bug-fixes">
+
+### Bug Fixes
+
+-   [`ccb03e3`](https://github.com/stdlib-js/stdlib/commit/ccb03e3017131cda4103abf9636b8527d93100a1) - ensure correct twiddle factor placement in `fft/base/fftpack/sinqi` [(#13459)](https://github.com/stdlib-js/stdlib/pull/13459)
+
+</section>
+
+<!-- /.bug-fixes -->
+
 <section class="commits">
 
 ### Commits
 
 <details>
 
+-   [`ccb03e3`](https://github.com/stdlib-js/stdlib/commit/ccb03e3017131cda4103abf9636b8527d93100a1) - **fix:** ensure correct twiddle factor placement in `fft/base/fftpack/sinqi` [(#13459)](https://github.com/stdlib-js/stdlib/pull/13459) _(by Gunj Joshi)_
 -   [`518afed`](https://github.com/stdlib-js/stdlib/commit/518afed323349adf17747b362ef905c2fbff393a) - **feat:** add `fft/base/fftpack/sinqi` [(#13000)](https://github.com/stdlib-js/stdlib/pull/13000) _(by Gunj Joshi, Athan Reines)_
 
 </details>
